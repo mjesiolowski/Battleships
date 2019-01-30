@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Battleship game</title>
+   <link rel="shortcut icon" href="images/favicon.ico.png" type="image/x-icon">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div class="wraper">
+      <div class="board">
+         <div></div>
+         <div>A</div>
+         <div>B</div>
+         <div>C</div>
+         <div>D</div>
+         <div>E</div>
+         <div>F</div>
+         <div>1</div>
+         <div id="11" class="cell"></div>
+         <div id="21" class="cell"></div>
+         <div id="31" class="cell"></div>
+         <div id="41" class="cell"></div>
+         <div id="51" class="cell"></div>
+         <div id="61" class="cell"></div>
+         <div>2</div>
+         <div id="12" class="cell"></div>
+         <div id="22" class="cell"></div>
+         <div id="32" class="cell"></div>
+         <div id="42" class="cell"></div>
+         <div id="52" class="cell"></div>
+         <div id="62" class="cell"></div>
+         <div>3</div>
+         <div id="13" class="cell"></div>
+         <div id="23" class="cell"></div>
+         <div id="33" class="cell"></div>
+         <div id="43" class="cell"></div>
+         <div id="53" class="cell"></div>
+         <div id="63" class="cell"></div>
+         <div>4</div>
+         <div id="14" class="cell"></div>
+         <div id="24" class="cell"></div>
+         <div id="34" class="cell"></div>
+         <div id="44" class="cell"></div>
+         <div id="54" class="cell"></div>
+         <div id="64" class="cell"></div>
+         <div>5</div>
+         <div id="15" class="cell"></div>
+         <div id="25" class="cell"></div>
+         <div id="35" class="cell"></div>
+         <div id="45" class="cell"></div>
+         <div id="55" class="cell"></div>
+         <div id="65" class="cell"></div>
+         <div>6</div>
+         <div id="16" class="cell"></div>
+         <div id="26" class="cell"></div>
+         <div id="36" class="cell"></div>
+         <div id="46" class="cell"></div>
+         <div id="56" class="cell"></div>
+         <div id="66" class="cell"></div>
+      </div>
+      <div class="button">
+         <button>PLAY!</button>
+      </div>
+      <div class="statistics">
+         <p>Strikes: <span class="strikes">0</span></p>
+         <p>Hits: <span class="hits">0</span>\10</p>
+         <p>Destroyed: <span class="destroyed">0</span>\4</p>
+      </div>
+   </div>
+
+   <script src="Positioning.js"></script>
+   <script src="Statistics.js"></script>
+   <script src="Rules.js"></script>
+   <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Open Sans', sans-serif;
+}
+
+body {
+   position: relative;
+   height: 100vh;
+   overflow: hidden;
+   background-image: url(images/radar.png);
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-color: rgba(143, 132, 73, .9);
+}
+
+div.board {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   display: flex;
+   width: 595px;
+   height: 595px;
+   flex-wrap: wrap;
+}
+
+div.board div {
+   width: 85px;
+   height: 85px;
+   border: 1px solid black;
+   font-size: 35px;
+   text-align: center;
+   line-height: 85px;
+   background-color: rgba(143, 130, 53, .9)
+}
+
+
+div.board div.hit {
+   background-image: url(images/cellWarship.png);
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+div.board div.strike {
+   background-image: url(images/x.png);
+   background-size: 70%;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+div.board div.cell:hover {
+   background-color: rgb(133, 66, 33);
+}
+
+div.board div.destroyed {
+   background-color: red;
+}
+
+div.board div.destroyed:hover {
+   background-color: red;
+}
+
+
+div.button,
+div.statistics {
+   position: absolute;
+   max-width: 1000px;
+   margin: 0 auto;
+   text-align: center;
+   left: 50%;
+   transform: translate(-50%);
+}
+
+div.button {
+   top: 4vh;
+}
+
+div.statistics {
+   bottom: 1vh;
+}
+
+div.statistics p {
+   font-size: 30px;
+   margin: 1vh;
+   padding: 0 2vh;
+   background-color: rgba(255, 255, 255, .5)
+}
+
+div.statistics p span {
+   font-weight: 700;
+}
+
+button {
+   width: 250px;
+   height: 100px;
+   font-size: 40px;
+   letter-spacing: 7px;
+   color: black;
+   background-color: rgba(255, 226, 7, .8);
+   border: 3px solid rgb(133, 66, 33);
+   transition: .2s;
+}
+
+button:hover {
+   background-color: rgb(133, 66, 33);
+   color: white
+}
+
+@media (max-width: 1025px) and (orientation: landscape) {
+   div.board {
+      top: 0;
+      right: 0;
+      transform: translate(-32%, 1.5%);
+      width: 749px;
+      height: 749px;
+   }
+
+   div.board div {
+      width: 107px;
+      height: 107px;
+      line-height: 107px;
+   }
+
+   div.button,
+   div.statistics {
+      margin: 0 1vh;
+      left: 0;
+      transform: none;
+   }
+}
+
+
+@media (max-width: 825px) and (orientation: landscape) {
+   div.board {
+      transform: translate(-15%, 4%);
+      width: 350px;
+      height: 350px;
+   }
+
+   div.board div {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+   }
+
+   div.button,
+   div.statistics {
+      max-width: 1000px;
+      margin: 0 1vh;
+      left: 0;
+      transform: none;
+   }
+}
+
+@media (max-width: 650px) and (orientation: landscape) {
+   div.board {
+      transform: translate(-11%, 1%);
+      width: 315px;
+      height: 315px;
+   }
+
+   div.board div {
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+   }
+
+   button {
+      width: 230px;
+      height: 80px;
+   }
+}
+
+@media (max-height: 825px) and (orientation: portrait) {
+   div.board {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 350px;
+      height: 350px;
+   }
+
+   div.board div {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+   }
+
+   div.statistics {
+      width: 75%;
+   }
+
+   div.button {
+      top: 2vh;
+   }
+
+   button {
+      width: 230px;
+      height: 80px;
+   }
+}
+
+@media (max-height: 670px) and (orientation: portrait) {
+   div.board {
+      transform: translate(-50%, -60%);
+   }
+}
+
+@media (max-height: 570px) and (orientation: portrait) {
+   div.board {
+      transform: translate(-50%, -60%);
+   }
+
+   div.board {
+      width: 294px;
+      height: 294px;
+   }
+
+   div.board div {
+      width: 42px;
+      height: 42px;
+      line-height: 42px;
+   }
+
+}
