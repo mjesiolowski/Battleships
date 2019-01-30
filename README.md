@@ -5,6 +5,7 @@ Game rules:
 - your task is to discover their location as quick as you can do
 
 About the project:
+
 As I have discovered some Object Oriented Programming basics lately, I decided to put my knowledge into practise. I must admit that it was challenging and demanding, but I managed to get it over with even before my deadline.
 
 Let me show you through the project. It consists with three main classes:
