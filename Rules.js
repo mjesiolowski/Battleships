@@ -16,7 +16,15 @@ class Rules {
       this.startGame()
    }
 
+
    startGame() {
+      alert(`Game rules:
+- there are four battleships - two carriers (3 boxes) and two destroyers (2 boxes),
+- all battleships might be set either horizontally or vertically (one line),
+- your task is to discover their location as quick as you can do,
+
+"Click on PLAY!"
+  `)
       this.button.onmouseup = () => {
          if (this.flag) {
             this.flag = !this.flag
@@ -29,11 +37,11 @@ class Rules {
             })
          } else if (this.stats.destroyed.textContent != 4) alert("You're in the game!")
       }
-      this.positioning.allCells.forEach((cell) => {
-         cell.addEventListener("click", (e) => {
-            if (!this.positioning.rendered) alert("Click on PLAY!")
-         })
-      })
+      // this.positioning.allCells.forEach((cell) => {
+      //    cell.addEventListener("click", (e) => {
+      //       if (!this.positioning.rendered) alert("Click on PLAY!")
+      //    })
+      // })
    }
 
    checkInput(value) {
