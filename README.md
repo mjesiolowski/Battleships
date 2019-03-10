@@ -1,7 +1,8 @@
 # Battleships
 Game rules:
-- there are four battleships - two carriers (3 boxes) and two destroyers (2 boxes), rendered randomly on the board,
+- there are four battleships - one carrier (3 boxes) and three destroyers (2 boxes), rendered randomly on the board,
 - all battleships might be set either horizontally or vertically (one line),
+- battlesips cannot touch each other (minimum one box must separate them)
 - your task is to discover their location as quick as you can do
 
 About the project:
