@@ -1,1 +1,1 @@
-const game = new Rules()
+const game = new Game()

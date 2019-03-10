@@ -1,4 +1,4 @@
-class Rules {
+class Game {
    constructor() {
       this.stats = new Statistics()
       this.positioning = new Positioning()
