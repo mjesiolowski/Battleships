@@ -9,7 +9,7 @@ body {
    position: relative;
    height: 100vh;
    overflow: hidden;
-   background-image: url('/images/radar.png');
+   background-image: url(../images/radar.png);
    background-size: contain;
    background-repeat: no-repeat;
    background-position: center;
@@ -39,14 +39,14 @@ div.board div {
 
 
 div.board div.hit {
-   background-image: url('/images/cellWarship.png');
+   background-image: url(../images/cellWarship.png);
    background-size: contain;
    background-repeat: no-repeat;
    background-position: center;
 }
 
 div.board div.strike {
-   background-image: url('/images/x.png');
+   background-image: url(../images/x.png);
    background-size: 70%;
    background-repeat: no-repeat;
    background-position: center;
