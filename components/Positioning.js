@@ -12,24 +12,21 @@ class Positioning {
    setCell(ship, position) {
       //sets coordinates of the first cell for each ship
       const firstCell = this.allCells[Math.floor(Math.random() * this.allCells.length)]
-      this.firstCell = []
+
       if (ship === 3 && position === 0) {
          if (firstCell.id > 50) return this.setCell(3, 0);
-         else this.firstCell = [ship, position, firstCell];
+
       } else if (ship === 3 && position === 1) {
-         if (firstCell.id.charAt(1) === "1" || firstCell.id.charAt(1) === "2") {
-            return this.setCell(3, 1);
-         } else this.firstCell = [ship, position, firstCell];
+         if (firstCell.id.charAt(1) === "1" || firstCell.id.charAt(1) === "2") return this.setCell(3, 1);
+
       } else if (ship === 2 && position === 0) {
          if (firstCell.id > 60) return this.setCell(2, 0);
-         else this.firstCell = [ship, position, firstCell];
-      } else if (ship === 2 && position === 1) {
-         if (firstCell.id.charAt(1) === "1") {
-            return this.setCell(2, 1);
-         } else this.firstCell = [ship, position, firstCell];
-      }
-      this.verifyConflict([...this.firstCell])
 
+      } else if (ship === 2 && position === 1) {
+         if (firstCell.id.charAt(1) === "1") return this.setCell(2, 1);
+      }
+
+      this.verifyConflict([ship, position, firstCell])
    }
 
    verifyConflict([ship, position, cell]) {
