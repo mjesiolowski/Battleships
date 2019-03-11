@@ -5,7 +5,6 @@ class Game {
 
       this.button = document.querySelector("button")
       this.board = document.querySelector("div.board")
-      this.flag = true
       this.end = false
 
       this.button.addEventListener("mousedown", () => {
@@ -13,7 +12,6 @@ class Game {
       })
       this.startGame()
    }
-
 
    startGame() {
       alert(`Game rules:
@@ -25,18 +23,15 @@ class Game {
 "Click on PLAY!"
   `)
       this.button.onmouseup = () => {
-         if (this.flag) {
-            this.flag = !this.flag
-            alert("Choose your box!")
-            this.button.style.display = 'none';
-            this.board.style.opacity = 1;
-            this.positioning.renderShips()
-            this.positioning.allCells.forEach((cell) => {
-               cell.addEventListener("click", (e) => {
-                  this.checkInput(e.target)
-               })
+         alert("Choose your box!")
+         this.button.style.display = 'none';
+         this.board.style.opacity = 1;
+         this.positioning.renderShips()
+         this.positioning.allCells.forEach((cell) => {
+            cell.addEventListener("click", (e) => {
+               this.checkInput(e.target)
             })
-         } else if (this.stats.destroyed.textContent != 3) alert("You're in the game!")
+         })
       }
    }
 
@@ -58,6 +53,7 @@ class Game {
       } else alert("Why don't you play again?");
 
    }
+
    checkIfSunken([ship1, ship2, ship3]) {
       sunkenCheck.call(this, ship1)
       sunkenCheck.call(this, ship2)

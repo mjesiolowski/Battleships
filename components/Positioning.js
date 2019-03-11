@@ -63,6 +63,17 @@ class Positioning {
       }
    }
 
+   renderShips() {
+      for (let i = 0; i < this.shipLength.length; i++) {
+         const ship = this.shipLength[i]
+         const position = this.setPosition()
+         this.setCell(ship, position)
+         this.addShips([...this.oneShip])
+         this.addConflictArea([...this.oneShip])
+         this.shipCells.push(this.oneShip)
+      }
+   }
+
    addConflictArea([...shipPosition]) {
       //adding "conflictedArea" data attribute to all cells around the ships
       const cells = [...shipPosition]
@@ -104,14 +115,5 @@ class Positioning {
       if (thirdCell) cellAttribute(thirdCell)
    }
 
-   renderShips() {
-      for (let i = 0; i < this.shipLength.length; i++) {
-         const ship = this.shipLength[i]
-         const position = this.setPosition()
-         this.setCell(ship, position)
-         this.addConflictArea([...this.oneShip])
-         this.addShips([...this.oneShip])
-         this.shipCells.push(this.oneShip)
-      }
-   }
+
 }
