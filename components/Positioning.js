@@ -115,7 +115,6 @@ class Positioning {
          this.addConflictArea([...this.oneShip])
          this.addShips([...this.oneShip])
          this.shipCells.push(this.oneShip)
-         this.rendered = true
       }
    }
 }

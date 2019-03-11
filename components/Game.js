@@ -70,22 +70,14 @@ class Game {
       }
 
       function sunkenCheck(ship) {
-         if (ship.length === 2) {
-            if (ship[0].className.includes("shipHit") && ship[1].className.includes("shipHit")) {
-               ship[0].classList.add("destroyed")
-               ship[1].classList.add("destroyed")
-               ship[0].classList.remove("shipHit")
-               this.stats.addGameToStats(false, false, true)
-            }
+         const hitShip = ship.filter(shipCell => (
+            shipCell.className.includes("shipHit")
+         ))
 
-         } else if (ship.length === 3) {
-            if (ship[0].className.includes("shipHit") && ship[1].className.includes("shipHit") && ship[2].className.includes("shipHit")) {
-               ship[0].classList.add("destroyed")
-               ship[1].classList.add("destroyed")
-               ship[2].classList.add("destroyed")
-               ship[0].classList.remove("shipHit")
-               this.stats.addGameToStats(false, false, true)
-            }
+         if (ship.length === hitShip.length) {
+            ship[0].classList.remove("shipHit")
+            this.stats.addGameToStats(false, false, true)
+            ship.forEach(ship => ship.classList.add("destroyed"))
          }
       }
    }
