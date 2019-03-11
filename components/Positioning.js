@@ -1,14 +1,16 @@
 class Positioning {
    constructor() {
-      this.shipLength = [3, 2, 2, 2]
+      this.shipLength = [3, 2, 2]
       this.position = ["horizontal", "vertical"]
       this.allCells = [...document.querySelectorAll(".cell")]
       this.shipCells = []
    }
    setPosition() {
+      //horizontal or vertical
       return Math.floor(Math.random() * this.position.length)
    }
    setCell(ship, position) {
+      //sets coordinates of the first cell for each ship
       const firstCell = this.allCells[Math.floor(Math.random() * this.allCells.length)]
       this.firstCell = []
       if (ship === 3 && position === 0) {
@@ -26,12 +28,12 @@ class Positioning {
             return this.setCell(2, 1);
          } else this.firstCell = [ship, position, firstCell];
       }
-      console.log(...this.firstCell)
       this.verifyConflict([...this.firstCell])
 
    }
 
    verifyConflict([ship, position, cell]) {
+      //checks if the first cell and neighbour cells can be positioned without any confilcts
       const firstIdChar = cell.id.charAt(0)
       const secondIdChar = cell.id.charAt(1)
       const rightCell = document.getElementById(firstIdChar / 1 + 1 + secondIdChar)
@@ -65,7 +67,7 @@ class Positioning {
    }
 
    addConflictArea([...shipPosition]) {
-
+      //adding "conflictedArea" data attribute to all cells around the ships
       const cells = [...shipPosition]
 
       for (let i = 0; i < cells.length; i++) {
@@ -95,6 +97,7 @@ class Positioning {
    }
 
    addShips([mainCell, secondCell, thirdCell]) {
+      //adding "active" data attribute to the cells with ships
       function cellAttribute(cell) {
          cell.setAttribute("data-key", "active");
       }

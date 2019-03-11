@@ -4,14 +4,12 @@ class Game {
       this.positioning = new Positioning()
 
       this.button = document.querySelector("button")
+      this.board = document.querySelector("div.board")
       this.flag = true
       this.end = false
 
       this.button.addEventListener("mousedown", () => {
          this.button.style.transform = "scale(.9)"
-      })
-      this.button.addEventListener("mouseup", () => {
-         this.button.style.transform = "scale(1)"
       })
       this.startGame()
    }
@@ -19,7 +17,7 @@ class Game {
 
    startGame() {
       alert(`Game rules:
-- there are four battleships - one carrier (3 boxes) and three destroyers (2 boxes), rendered randomly on the board,
+- there are three battleships - one carrier (3 boxes) and two destroyers (2 boxes), rendered randomly on the board,
 - all battleships might be set either horizontally or vertically (one line),
 - battlesips cannot touch each other (minimum one box must separate them)
 - your task is to discover their location as quick as you can do
@@ -30,19 +28,16 @@ class Game {
          if (this.flag) {
             this.flag = !this.flag
             alert("Choose your box!")
+            this.button.style.display = 'none';
+            this.board.style.opacity = 1;
             this.positioning.renderShips()
             this.positioning.allCells.forEach((cell) => {
                cell.addEventListener("click", (e) => {
                   this.checkInput(e.target)
                })
             })
-         } else if (this.stats.destroyed.textContent != 4) alert("You're in the game!")
+         } else if (this.stats.destroyed.textContent != 3) alert("You're in the game!")
       }
-      // this.positioning.allCells.forEach((cell) => {
-      //    cell.addEventListener("click", (e) => {
-      //       if (!this.positioning.rendered) alert("Click on PLAY!")
-      //    })
-      // })
    }
 
    checkInput(value) {
@@ -63,16 +58,15 @@ class Game {
       } else alert("Why don't you play again?");
 
    }
-   checkIfSunken([ship1, ship2, ship3, ship4]) {
+   checkIfSunken([ship1, ship2, ship3]) {
       sunkenCheck.call(this, ship1)
       sunkenCheck.call(this, ship2)
       sunkenCheck.call(this, ship3)
-      sunkenCheck.call(this, ship4)
 
-      if (this.stats.destroyed.textContent == 4) {
+      if (this.stats.destroyed.textContent == 3) {
          const that = this
          this.end = !this.end
-         setTimeout(this.endGame, 100, that)
+         setTimeout(this.endGame, 200, that)
       }
 
       function sunkenCheck(ship) {
@@ -95,10 +89,12 @@ class Game {
          }
       }
    }
-   endGame(that) {
-      if (that.end) {
+
+   endGame = () => {
+      if (this.end) {
          alert("Congrats! You've got it!")
-         that.button.addEventListener("click", () => {
+         this.button.style.display = 'inline-block'
+         this.button.addEventListener("click", () => {
             location.reload()
          })
       }

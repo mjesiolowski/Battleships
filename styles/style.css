@@ -13,18 +13,21 @@ body {
    background-size: contain;
    background-repeat: no-repeat;
    background-position: center;
+   background-attachment: fixed;
    background-color: rgba(143, 132, 73, .9);
 }
 
 div.board {
    position: fixed;
-   top: 50%;
+   top: 5%;
    left: 50%;
-   transform: translate(-50%, -50%);
+   transform: translateX(-50%);
    display: flex;
    width: 595px;
    height: 595px;
    flex-wrap: wrap;
+   opacity: 0;
+   transition: .5s;
 }
 
 div.board div {
@@ -36,7 +39,6 @@ div.board div {
    line-height: 85px;
    background-color: rgba(143, 130, 53, .9)
 }
-
 
 div.board div.hit {
    background-image: url(../images/cellWarship.png);
@@ -64,11 +66,9 @@ div.board div.destroyed:hover {
    background-color: red;
 }
 
-
 div.button,
 div.statistics {
    position: absolute;
-   max-width: 1000px;
    margin: 0 auto;
    text-align: center;
    left: 50%;
@@ -76,7 +76,7 @@ div.statistics {
 }
 
 div.button {
-   top: 4vh;
+   top: 25%;
 }
 
 div.statistics {
@@ -95,12 +95,12 @@ div.statistics p span {
 }
 
 button {
-   width: 250px;
-   height: 100px;
+   width: 350px;
+   height: 150px;
    font-size: 40px;
    letter-spacing: 7px;
    color: black;
-   background-color: rgba(255, 226, 7, .8);
+   background-color: rgba(255, 226, 7);
    border: 3px solid rgb(133, 66, 33);
    transition: .2s;
 }
@@ -110,7 +110,7 @@ button:hover {
    color: white
 }
 
-@media (max-width: 1025px) and (orientation: landscape) {
+@media (max-height: 800px) and (orientation: landscape) {
    div.board {
       top: 0;
       right: 0;
