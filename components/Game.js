@@ -90,11 +90,11 @@ class Game {
       }
    }
 
-   endGame = () => {
-      if (this.end) {
+   endGame(that) {
+      if (that.end) {
          alert("Congrats! You've got it!")
-         this.button.style.display = 'inline-block'
-         this.button.addEventListener("click", () => {
+         that.button.style.display = 'inline-block'
+         that.button.addEventListener("click", () => {
             location.reload()
          })
       }
