@@ -14,16 +14,13 @@ class Game {
    }
 
    startGame() {
-      alert(`Game rules:
-- there are three battleships - one carrier (3 boxes) and two destroyers (2 boxes), rendered randomly on the board,
-- all battleships might be set either horizontally or vertically (one line),
-- battlesips cannot touch each other (minimum one box must separate them)
-- your task is to discover their location as quick as you can do
-
-"Click on PLAY!"
-  `)
       this.button.onmouseup = () => {
-         alert("Choose your box!")
+         if (!this.end) alert(`Game rules:
+         - there are three battleships - one carrier (3 boxes) and two destroyers (2 boxes), rendered randomly on the board,
+         - all battleships might be set either horizontally or vertically (one line),
+         - battlesips cannot touch each other (minimum one box must separate them)
+         - your task is to discover their location as quick as you can do
+           `)
          this.button.style.display = 'none';
          this.board.style.opacity = 1;
          this.positioning.renderShips()
@@ -81,6 +78,7 @@ class Game {
    endGame(that) {
       if (that.end) {
          alert("Congrats! You've got it!")
+         that.button.textContent = "RESTART"
          that.button.style.display = 'inline-block'
          that.button.addEventListener("click", () => {
             location.reload()
