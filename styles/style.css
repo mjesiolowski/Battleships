@@ -8,109 +8,177 @@
 body {
    position: relative;
    height: 100vh;
-   overflow: hidden;
-   background-image: url(../images/radar.png);
-   background-size: contain;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   background-color: rgba(143, 132, 73, .9);
+   background: url(../images/bg.jpg) no-repeat center fixed;
+   background-size: cover;
 }
 
-div.board {
-   position: fixed;
-   top: 5%;
-   left: 50%;
-   transform: translateX(-50%);
+.board {
+   position: absolute;
+   top: 50%;
+   left: 65%;
+   transform: translate(-50%, -50%);
    display: flex;
-   width: 595px;
-   height: 595px;
    flex-wrap: wrap;
+   width: 90vh;
+   height: 90vh;
+   background-color: rgba(20, 20, 20, 0.75);
+   box-shadow: 0 0 2px 1px #fff;
    opacity: 0;
    transition: .5s;
 }
 
-div.board div {
-   width: 85px;
-   height: 85px;
+.board div {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 14.285%;
+   height: 14.285%;
    border: 1px solid black;
-   font-size: 35px;
-   text-align: center;
-   line-height: 85px;
-   background-color: rgba(143, 130, 53, .9)
+   font-size: 3rem;
+   color: rgb(239, 232, 232);
 }
 
-div.board div.hit {
+.hit {
    background-image: url(../images/cellWarship.png);
    background-size: contain;
    background-repeat: no-repeat;
    background-position: center;
 }
 
-div.board div.strike {
+.strike {
    background-image: url(../images/x.png);
    background-size: 70%;
    background-repeat: no-repeat;
    background-position: center;
 }
 
-div.board div.cell:hover {
-   background-color: rgb(133, 66, 33);
+.shipHit {
+   background-color: rgba(239, 232, 232, .5);
 }
 
-div.board div.destroyed {
-   background-color: red;
+.cell:hover {
+   background-color: rgba(239, 232, 232, .5);
 }
 
-div.board div.destroyed:hover {
-   background-color: red;
+.destroyed {
+   background-color: #A61532;
 }
 
-div.button,
-div.statistics {
+.destroyed:hover {
+   background-color: #A61532;
+}
+
+.statistics {
    position: absolute;
-   margin: 0 auto;
+   left: 2%;
+   top: 30%;
    text-align: center;
-   left: 50%;
-   transform: translate(-50%);
 }
 
-div.button {
-   top: 25%;
-}
-
-div.statistics {
-   bottom: 1vh;
-}
-
-div.statistics p {
-   font-size: 30px;
+.statistics__text {
    margin: 1vh;
    padding: 0 2vh;
-   background-color: rgba(255, 255, 255, .5)
+   background-color: rgba(255, 255, 255, .6);
+   border: 1px solid rgba(20, 20, 20, 1);
+   font-size: 30px;
 }
 
-div.statistics p span {
+.statistics span {
    font-weight: 700;
 }
 
-button {
-   width: 350px;
-   height: 150px;
-   font-size: 40px;
+.button {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   padding: 2rem 6rem;
+   border: 3px solid rgba(20, 20, 20, 1);
+   box-shadow: 0 0 2px 1px #fff;
+   background-color: rgba(239, 232, 232, 1);
+   font-size: 2.8rem;
+   line-height: 2;
+   text-align: center;
    letter-spacing: 7px;
    color: black;
-   background-color: rgba(255, 226, 7);
-   border: 3px solid rgb(133, 66, 33);
    transition: .2s;
+   cursor: pointer;
 }
 
-button:hover {
-   background-color: rgb(133, 66, 33);
-   color: white
+.button:hover {
+   background-color: rgba(20, 20, 20, 1);
+   color: rgba(239, 232, 232, .95);
 }
 
-@media (max-height: 800px) and (orientation: landscape) {
+@media (max-width:850px) and (orientation: landscape) {
+   .board div {
+      font-size: 2rem;
+   }
+
+   .statistics__text {
+      font-size: 1.5rem;
+   }
+
+   .button {
+      left: 65%;
+      padding: 1.5rem 3rem;
+   }
+}
+
+@media (orientation: portrait) {
+   .board {
+      top: 2%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90vw;
+      height: 90vw;
+   }
+
+   .board div {
+      font-size: 2.5rem;
+   }
+
+   .statistics {
+      left: 50%;
+      top: 91%;
+      transform: translateX(-50%);
+      width: 95%;
+   }
+
+   .statistics__text {
+      display: inline-block;
+   }
+
+   .button {
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+   }
+}
+
+@media (orientation: portrait) and (max-height: 850px) {
+
+   .board div {
+      font-size: 100%;
+   }
+
+   .statistics {
+      left: 50%;
+      top: 70%;
+   }
+
+   .statistics__text {
+      font-size: 1.2rem;
+   }
+
+
+   .button {
+      padding: 1.5rem 2rem;
+   }
+}
+
+
+/* @media (max-height: 800px) and (orientation: landscape) {
    div.board {
       top: 0;
       right: 0;
@@ -226,4 +294,4 @@ button:hover {
       line-height: 42px;
    }
 
-}
+} */

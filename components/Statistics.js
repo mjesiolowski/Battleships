@@ -3,7 +3,7 @@ class Statistics {
       this.stats = [0, 0, 0]
       this.strikes = document.querySelector(".strikes")
       this.hits = document.querySelector(".hits")
-      this.destroyed = document.querySelector(".destroyed")
+      this.destroyed = document.querySelector(".destroy")
    }
    addGameToStats(strike, hit, destroyed) {
       if (strike) {

@@ -3,13 +3,9 @@ class Game {
       this.stats = new Statistics()
       this.positioning = new Positioning()
 
-      this.button = document.querySelector("button")
+      this.button = document.querySelector(".button")
       this.board = document.querySelector("div.board")
       this.end = false
-
-      this.button.addEventListener("mousedown", () => {
-         this.button.style.transform = "scale(.9)"
-      })
       this.startGame()
    }
 
