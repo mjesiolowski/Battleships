@@ -57,9 +57,10 @@ class Game {
       sunkenCheck.call(this, ship3)
 
       if (this.stats.destroyed.textContent == 3) {
-         const that = this
          this.end = !this.end
-         setTimeout(this.endGame, 200, that)
+         setTimeout(() => {
+            this.endGame()
+         }, 200)
       }
 
       function sunkenCheck(ship) {
@@ -75,12 +76,12 @@ class Game {
       }
    }
 
-   endGame(that) {
-      if (that.end) {
+   endGame() {
+      if (this.end) {
          alert("Congrats! You've got it!")
-         that.button.textContent = "RESTART"
-         that.button.style.display = 'inline-block'
-         that.button.addEventListener("click", () => {
+         this.button.textContent = "RESTART"
+         this.button.style.display = 'inline-block'
+         this.button.addEventListener("click", () => {
             location.reload()
          })
       }
