@@ -26,6 +26,6 @@ Game rules:
 - your task is to discover their location as quick as you can do
 
 Technology:
--HTTML5, CSS (Flexbox), OOP JS, RWD
+HTTML5, CSS (Flexbox), OOP JS, RWD
 
 https://mjesiolowski.github.io/Battleships/
