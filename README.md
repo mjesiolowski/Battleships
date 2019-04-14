@@ -14,7 +14,7 @@ Then there is the Positioning class, it is more complex and contains many differ
 - an array with a ship type (the big one - 3 cells and the small one - 2 cells),
 - a function to generate the first box\cell,
 - a function to determine a ship position - horzizontal vs vertical,
-- a function to verify if there is any conflict (ships cannot overlay, there must be at least one cell border between the ships), - - a function to set attributes in order to interact with DOM
+- a function to verify if there is any conflict (ships cannot overlay, there must be at least one cell border between the ships), a function to set attributes in order to interact with DOM
 - a function to render the ships and add them to the board.
 
 The last but not least class is the Game class. It focuses on user interaction (such as alerts handlers) and contains two main features - setting the rules and setting interface actions. 
