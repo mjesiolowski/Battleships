@@ -1,8 +1,10 @@
 # Battleships
-About the project:
+https://mjesiolowski.github.io/Battleships/
 
+## info
 As I have discovered some Object Oriented Programming lately, I decided to put my knowledge into practise. I must admit that it was challenging and demanding, but I managed to get it over with even before my deadline.
 
+## content
 Let me show you through the project. It consists with three main classes:
 - Statistics,
 - Positioning,
@@ -19,13 +21,13 @@ Then there is the Positioning class, it is more complex and contains many differ
 
 The last but not least class is the Game class. It focuses on user interaction (such as alerts handlers) and contains two main features - setting the rules and setting interface actions. 
 
+## rules
 Game rules:
 - there are three battleships - one carrier (3 boxes) and two destroyers (2 boxes), rendered randomly on the board,
 - all battleships might be set either horizontally or vertically (one line),
 - battlesips cannot touch each other (minimum one box must separate them)
 - your task is to discover their location as quick as you can do
 
+## technology
 Technology:
 HTTML5, CSS (Flexbox), OOP JS, RWD
-
-https://mjesiolowski.github.io/Battleships/
